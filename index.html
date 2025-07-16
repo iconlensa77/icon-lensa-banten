@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Lensa Banten</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://example.com/iconlensabanten.png " type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Lightbox CSS -->
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css " rel="stylesheet">
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: linear-gradient(-45deg, #ff4e50, #f9d423, #e63946, #6a040f);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .navbar:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 6px #000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                width: 100%;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.show {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://source.unsplash.com/1600x900/?landscape,banten');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: #fff;
+            color: #e63946;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .btn:hover {
+            background: #e63946;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #e63946, #f9d423);
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 4rem 2rem;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            animation: slideInLeft 1s ease;
+        }
+
+        .filter-buttons {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: #f9d423;
+            color: #000;
+            box-shadow: 0 0 10px #f9d423;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .grid-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Video Embed with Thumbnail */
+        .video-section {
+            padding: 4rem 2rem;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.03);
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        .video-thumbnail img:hover {
+            filter: brightness(1.1);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .play-button::after {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent #e63946;
+            margin-left: 4px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .testimonial {
+            max-width: 700px;
+            margin: 2rem auto;
+            font-style: italic;
+            opacity: 0.9;
+            animation: slideInRight 1s ease;
+        }
+
+        .testimonial-author {
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: #0d0d0d;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea, select {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        #paymentProof {
+            padding: 0.7rem;
+            border-radius: 10px;
+            border: none;
+            background-color: #222;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 1rem;
+            background: #e63946;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            animation: fadeInUp 1s ease;
+        }
+
+        button:hover {
+            background: #ff4d5a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #000;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: background-color 0.3s;
+            animation: floating 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebf56;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            background: #333;
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes slideInLeft {
+            from {opacity: 0; transform: translateX(-50px);}
+            to {opacity: 1; transform: translateX(0);}
+        }
+
+        @keyframes slideInRight {
+            from {opacity: 0; transform: translateX(50px);}
+            to {opacity: 1; transform: translateX(0);}
+        }
+
+        .light-mode {
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+            color: #000;
+        }
+
+        .light-mode .about {
+            background: linear-gradient(to right, #e63946, #f9d423);
+        }
+
+        .light-mode .btn {
+            color: #e63946;
+            background: white;
+        }
+
+        .light-mode .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        .light-mode .grid-item img {
+            filter: grayscale(0);
+        }
+
+        .dark-mode .grid-item img {
+            filter: grayscale(0.5);
+        }
+
+        /* Admin Panel */
+        .admin-login {
+            padding: 4rem 2rem;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .admin-panel {
+            padding: 2rem;
+            background: linear-gradient(to bottom, #e63946, #f9d423);
+            display: none;
+        }
+
+        .booking-list {
+            margin-top: 2rem;
+            background: #222;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .booking-item {
+            background: #333;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: left;
+            animation: fadeInUp 1s ease;
+        }
+
+        .logout-btn {
+            float: right;
+            background: #e63946;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>Icon Lensa Banten</h2>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" class="scroll-link">Tentang</a>
+            <a href="#galeri" class="scroll-link">Galeri</a>
+            <a href="#video" class="scroll-link">Video</a>
+            <a href="#testimonials" class="scroll-link">Testimoni</a>
+            <a href="#booking" class="scroll-link">Booking</a>
+            <a href="#adminLogin" class="scroll-link">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Icon Lensa Banten</h1>
+            <p>Ceritakan momen berharga Anda melalui lensa kami.</p>
+            <a href="#galeri" class="btn">Lihat Galeri</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>Tentang Kami</h2>
+        <p>Kami adalah tim fotografer profesional di Banten yang berkomitmen mengabadikan momen-momen spesialmu dengan kualitas tinggi dan sentuhan seni.</p>
+    </section>
+
+    <!-- Galeri -->
+    <section id="galeri" class="gallery">
+        <h2>Galeri Terbaru</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="wedding">Pernikahan</button>
+            <button class="filter-btn" data-filter="event">Event</button>
+            <button class="filter-btn" data-filter="nature">Alam</button>
+        </div>
+        <div class="grid">
+            <div class="grid-item" data-category="wedding">
+                <a href="WhatsApp Image 2025-07-07 at 03.10.43_271da404.jpg" data-lightbox="gallery">
+                    <img src="WhatsApp Image 2025-07-07 at 03.29.04_97772bfe.jpg" alt="Gambar Pernikahan 1">
+                </a>
+            </div>
+            <div class="grid-item" data-category="wedding">
+                <a href="WhatsApp Image 2025-07-07 at 03.29.04_97772bfe.jpg" data-lightbox="gallery">
+                    <img src="WhatsApp Image 2025-07-07 at 03.29.03_69bb6d25.jpg" alt="Gambar Pernikahan 2">
+                </a>
+            </div>
+            <div class="grid-item" data-category="wedding">
+                <a href="WhatsApp Image 2025-07-07 at 03.10.43_271da404.jpg" data-lightbox="gallery">
+                    <img src="WhatsApp Image 2025-07-07 at 03.10.43_271da404.jpg" alt="Gambar Pernikahan 3">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Portfolio -->
+    <section id="video" class="video-section">
+        <h2>Portfolio Video</h2>
+        <div class="video-grid">
+            <a href=" https://www.youtube.com/embed/CGoxTMkNbmQ?autoplay=1" data-lightbox="portfolio-video" data-title="Highlight Pernikahan di Banten">
+                <div class="video-thumbnail">
+                    <img src=" https://i.ytimg.com/vi/CGoxTMkNbmQ/hqdefault.jpg " alt="Thumbnail Video">
+                    <div class="play-button"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>Apa Kata Klien?</h2>
+        <blockquote class="testimonial">"Hasil fotonya sangat memuaskan! Moment pernikahan saya diabadikan dengan sangat indah oleh Icon Lensa Banten." – <span class="testimonial-author">Anisa, Serang</span></blockquote>
+        <blockquote class="testimonial">"Sangat rekomended untuk dokumentasi acara keluarga. Timnya ramah dan profesional!" – <span class="testimonial-author">Rizal, Cilegon</span></blockquote>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="contact">
+        <h2>Booking & Upload Bukti Pembayaran</h2>
+        <p>Setelah memesan sesi, silakan unggah bukti pembayaran di bawah ini.</p>
+
+        <form class="contact-form" id="bookingForm">
+            <input type="text" placeholder="Nama Anda" required />
+            <input type="email" placeholder="Email Anda" required />
+            <input type="tel" placeholder="Nomor WhatsApp" required />
+
+            <select required>
+                <option value="">Pilih Jenis Sesi</option>
+                <option value="wedding">Wedding</option>
+                <option value="prewed">Pre-Wedding</option>
+                <option value="event">Event</option>
+                <option value="portrait">Portrait</option>
+            </select>
+
+            <input type="date" required />
+
+            <textarea rows="4" placeholder="Catatan tambahan..."></textarea>
+            <label for="paymentProof">Unggah Bukti Pembayaran:</label>
+            <input type="file" id="paymentProof" accept="image/*" required />
+            <button type="submit">Kirim Permintaan</button>
+        </form>
+    </section>
+
+    <!-- Admin Panel Login -->
+    <section class="admin-login" id="adminLogin">
+        <h2>Admin Panel - Login</h2>
+        <input type="text" id="adminUser" placeholder="Username" />
+        <input type="password" id="adminPass" placeholder="Password" />
+        <button onclick="loginAdmin()">Login</button>
+    </section>
+
+    <!-- Admin Panel Dashboard -->
+    <section class="admin-panel" id="adminPanel">
+        <h2>Daftar Booking</h2>
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+        <div class="booking-list" id="bookingList">
+            <p>Tidak ada pesanan.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Studio Icon Lensa Banten. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6287871300831?text=Saya%20ingin%20booking%20sesi%20fotografi" target="_blank" class="whatsapp-btn">💬 Chat via WhatsApp</a>
+
+    <!-- JavaScript -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js "></script>
+    <script>
+        // Scroll Navigation Highlight
+        const links = document.querySelectorAll('.scroll-link');
+        window.addEventListener('scroll', () => {
+            let scrollPos = window.scrollY + 100;
+
+            links.forEach(link => {
+                const section = document.querySelector(link.hash);
+                if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Gallery Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                document.querySelectorAll('.grid-item').forEach(item => {
+                    item.style.display = filter === 'all' || item.dataset.category === filter ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('show');
+        }
+
+        // EmailJS Submit
+        emailjs.init("public_abcd1234");
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = this[0].value;
+            const email = this[1].value;
+            const phone = this[2].value;
+            const type = this[3].value;
+            const date = this[4].value;
+            const note = this[5].value;
+
+            emailjs.send("service_xyz789", "template_abc123", {
+                name,
+                email,
+                phone,
+                type,
+                date,
+                note
+            }).then(() => {
+                alert("Data berhasil dikirim!");
+                this.reset();
+            }, (error) => {
+                alert("Gagal mengirim data.");
+                console.log(error);
+            });
+        });
+
+        // Admin Panel
+        function loginAdmin() {
+            const user = document.getElementById("adminUser").value;
+            const pass = document.getElementById("adminPass").value;
+
+            if (user === "admin" && pass === "123456") {
+                document.getElementById("adminLogin").style.display = "none";
+                document.getElementById("adminPanel").style.display = "block";
+                loadBookings();
+            } else {
+                alert("Login gagal. Coba lagi.");
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById("adminLogin").style.display = "block";
+            document.getElementById("adminPanel").style.display = "none";
+        }
+
+        function loadBookings() {
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            const list = document.getElementById("bookingList");
+            list.innerHTML = "";
+
+            if (bookings.length === 0) {
+                list.innerHTML = "<p>Tidak ada pesanan.</p>";
+                return;
+            }
+
+            bookings.forEach((booking) => {
+                const div = document.createElement("div");
+                div.className = "booking-item";
+                div.innerHTML = `
+                    <strong>Nama:</strong> ${booking.name}<br>
+                    <strong>Email:</strong> ${booking.email}<br>
+                    <strong>WhatsApp:</strong> ${booking.phone}<br>
+                    <strong>Jenis Sesi:</strong> ${booking.type}<br>
+                    <strong>Tanggal:</strong> ${booking.date}<br>
+                    <strong>Catatan:</strong> ${booking.note}<br>
+                `;
+                list.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
